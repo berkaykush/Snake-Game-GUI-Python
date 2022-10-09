@@ -6,7 +6,7 @@
 
 <p>
   Snake game in Python using the pygame module.<br>
-  Later on, the start and finish menus will be included.<br>
+  Later on, a settings menu will be included.<br>
   credits for the images and the sound: <a href="github.com/clear-code-projects/Snake">here</a>
 </p>
 
