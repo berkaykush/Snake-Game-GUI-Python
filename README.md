@@ -1,7 +1,7 @@
 # Snake-Game-GUI-Python
 ![](https://img.shields.io/badge/Programming_Language-Python-blue.svg)
 ![](https://img.shields.io/badge/Game-Snake-yellow.svg)
-![](https://img.shields.io/badge/Python_Version-3.10.5-brown.svg)
+![](https://img.shields.io/badge/Python_Version-3.10.4-brown.svg)
 ![](https://img.shields.io/badge/Status-Ongoing-green.svg)
 
 <p>
@@ -21,5 +21,5 @@ pip install pygame
 ```
 git clone https://github.com/bk0511/Snake-Game-GUI-Python.git
 cd Sanke-Game-GUI-Python
-python game.py
+python code/main.py
 ```
