@@ -2,7 +2,8 @@ import os
 
 import pygame
 
-from points import CELL_HEIGHT, CELL_NUMBER, CELL_WIDTH, Point
+from game import CELL_NUMBER, Game
+from points import Point
 
 SNAKE_DIRECTIONS = {
     'UP': Point(0, -1),
@@ -37,74 +38,74 @@ class Snake:
         self.__head_up_img = pygame.image.load(os.path.join(
             '..', 'resources', 'images', 'head_up.png')).convert_alpha()
         self.__head_up_img = pygame.transform.smoothscale(
-            self.__head_up_img, (CELL_WIDTH, CELL_HEIGHT))
+            self.__head_up_img, Game.get_cell_size())
 
         self.__head_left_img = pygame.image.load(os.path.join(
             '..', 'resources', 'images', 'head_left.png')).convert_alpha()
         self.__head_left_img = pygame.transform.smoothscale(
-            self.__head_left_img, (CELL_WIDTH, CELL_HEIGHT))
+            self.__head_left_img, Game.get_cell_size())
 
         self.__head_right_img = pygame.image.load(os.path.join(
             '..', 'resources', 'images', 'head_right.png')).convert_alpha()
         self.__head_right_img = pygame.transform.smoothscale(
-            self.__head_right_img, (CELL_WIDTH, CELL_HEIGHT))
+            self.__head_right_img, Game.get_cell_size())
 
         self.__head_down_img = pygame.image.load(os.path.join(
             '..', 'resources', 'images', 'head_down.png')).convert_alpha()
         self.__head_down_img = pygame.transform.smoothscale(
-            self.__head_down_img, (CELL_WIDTH, CELL_HEIGHT))
+            self.__head_down_img, Game.get_cell_size())
 
     def __init_tail_img(self):
         self.__tail_up_img = pygame.image.load(os.path.join(
             '..', 'resources', 'images', 'tail_up.png')).convert_alpha()
         self.__tail_up_img = pygame.transform.smoothscale(
-            self.__tail_up_img, (CELL_WIDTH, CELL_HEIGHT))
+            self.__tail_up_img, Game.get_cell_size())
 
         self.__tail_left_img = pygame.image.load(os.path.join(
             '..', 'resources', 'images', 'tail_left.png')).convert_alpha()
         self.__tail_left_img = pygame.transform.smoothscale(
-            self.__tail_left_img, (CELL_WIDTH, CELL_HEIGHT))
+            self.__tail_left_img, Game.get_cell_size())
 
         self.__tail_right_img = pygame.image.load(os.path.join(
             '..', 'resources', 'images', 'tail_right.png')).convert_alpha()
         self.__tail_right_img = pygame.transform.smoothscale(
-            self.__tail_right_img, (CELL_WIDTH, CELL_HEIGHT))
+            self.__tail_right_img, Game.get_cell_size())
 
         self.__tail_down_img = pygame.image.load(os.path.join(
             '..', 'resources', 'images', 'tail_down.png')).convert_alpha()
         self.__tail_down_img = pygame.transform.smoothscale(
-            self.__tail_down_img, (CELL_WIDTH, CELL_HEIGHT))
+            self.__tail_down_img, Game.get_cell_size())
 
     def __init_body_block_img(self):
         self.__body_horizontal_img = pygame.image.load(os.path.join(
             '..', 'resources', 'images', 'body_horizontal.png')).convert_alpha()
         self.__body_horizontal_img = pygame.transform.smoothscale(
-            self.__body_horizontal_img, (CELL_WIDTH, CELL_HEIGHT))
+            self.__body_horizontal_img, Game.get_cell_size())
 
         self.__body_vertical_img = pygame.image.load(os.path.join(
             '..', 'resources', 'images', 'body_vertical.png')).convert_alpha()
         self.__body_vertical_img = pygame.transform.smoothscale(
-            self.__body_vertical_img, (CELL_WIDTH, CELL_HEIGHT))
+            self.__body_vertical_img, Game.get_cell_size())
 
         self.__body_bl_img = pygame.image.load(os.path.join(
             '..', 'resources', 'images', 'body_bl.png')).convert_alpha()
         self.__body_bl_img = pygame.transform.smoothscale(
-            self.__body_bl_img, (CELL_WIDTH, CELL_HEIGHT))
+            self.__body_bl_img, Game.get_cell_size())
 
         self.__body_br_img = pygame.image.load(os.path.join(
             '..', 'resources', 'images', 'body_br.png')).convert_alpha()
         self.__body_br_img = pygame.transform.smoothscale(
-            self.__body_br_img, (CELL_WIDTH, CELL_HEIGHT))
+            self.__body_br_img, Game.get_cell_size())
 
         self.__body_tl_img = pygame.image.load(os.path.join(
             '..', 'resources', 'images', 'body_tl.png')).convert_alpha()
         self.__body_tl_img = pygame.transform.smoothscale(
-            self.__body_tl_img, (CELL_WIDTH, CELL_HEIGHT))
+            self.__body_tl_img, Game.get_cell_size())
 
         self.__body_tr_img = pygame.image.load(os.path.join(
             '..', 'resources', 'images', 'body_tr.png')).convert_alpha()
         self.__body_tr_img = pygame.transform.smoothscale(
-            self.__body_tr_img, (CELL_WIDTH, CELL_HEIGHT))
+            self.__body_tr_img, Game.get_cell_size())
 
     @property
     def get_head_block_position(self):
@@ -249,22 +250,22 @@ class Snake:
                 self.__curr_body_block_img = self.__body_br_img
 
     def draw_head(self, screen):
-        snake_head_rect_x = self.__head_block_position.get_x * CELL_WIDTH
-        snake_head_rect_y = self.__head_block_position.get_y * CELL_HEIGHT
+        snake_head_rect_x = self.__head_block_position.get_x * Game.get_cell_width()
+        snake_head_rect_y = self.__head_block_position.get_y * Game.get_cell_height()
 
         snake_head_rect = pygame.Rect(
-            snake_head_rect_x, snake_head_rect_y, CELL_WIDTH, CELL_HEIGHT)
+            (snake_head_rect_x, snake_head_rect_y), Game.get_cell_size())
 
         self.__update_head_graphics()
         screen.blit(self.__curr_head_img, snake_head_rect)
 
     def draw_body(self, screen):
         for index, body_block in enumerate(self.__body_block_positions):
-            snake_body_rect_x = body_block.get_x * CELL_WIDTH
-            snake_body_rect_y = body_block.get_y * CELL_HEIGHT
+            snake_body_rect_x = body_block.get_x * Game.get_cell_width()
+            snake_body_rect_y = body_block.get_y * Game.get_cell_height()
 
             snake_body_rect = pygame.Rect(
-                snake_body_rect_x, snake_body_rect_y, CELL_WIDTH, CELL_HEIGHT)
+                (snake_body_rect_x, snake_body_rect_y), Game.get_cell_size())
 
             # check for tail
             if index == 0:

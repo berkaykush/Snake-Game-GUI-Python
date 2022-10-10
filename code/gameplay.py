@@ -2,8 +2,8 @@ import pygame
 
 from apple import Apple
 from colors import COLORS
-from game import Game
-from points import CELL_HEIGHT, CELL_NUMBER, CELL_WIDTH, Point
+from game import CELL_NUMBER, Game
+from points import Point
 from snake import Snake
 
 
@@ -92,10 +92,11 @@ class Gameplay(Game):
         self.__apple.draw(self._screen)
 
         text = f'Score: {self._score}'
-        font_size = min(int(CELL_WIDTH / 1.5), int(CELL_HEIGHT / 1.5))
+        font_size = min(int(self._cell_width / 1.5),
+                        int(self._cell_height / 1.5))
         text_pos = Point(10, 20.5)
         background_pos = Point(0, CELL_NUMBER)
-        background_size = (CELL_WIDTH * CELL_NUMBER, CELL_HEIGHT)
+        background_size = (self._cell_width * CELL_NUMBER, self._cell_height)
         background_color = COLORS['DARKER GREEN']
         border_radius = 0
         self._draw_text(text, font_size, text_pos, background_pos,

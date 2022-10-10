@@ -3,7 +3,7 @@ import random
 
 import pygame
 
-from points import CELL_HEIGHT, CELL_WIDTH
+from game import Game
 
 
 class Apple:
@@ -12,8 +12,8 @@ class Apple:
 
         self.__apple_img = pygame.image.load(os.path.join(
             '..', 'resources', 'images', 'apple.png')).convert_alpha()
-        self.__apple_img = pygame.transform.smoothscale(
-            self.__apple_img, (CELL_WIDTH, CELL_HEIGHT))
+        self.__apple_img = pygame.transform.scale(
+            self.__apple_img, Game.get_cell_size())
 
     @property
     def get_block_position(self):
@@ -23,10 +23,10 @@ class Apple:
         self.__block_position = random.choice(free_cells)
 
     def draw(self, screen):
-        apple_rect_x = self.__block_position.get_x * CELL_WIDTH
-        apple_rect_y = self.__block_position.get_y * CELL_HEIGHT
+        apple_rect_x = self.__block_position.get_x * Game.get_cell_width()
+        apple_rect_y = self.__block_position.get_y * Game.get_cell_height()
 
         apple_rect = pygame.Rect(
-            apple_rect_x, apple_rect_y, CELL_WIDTH, CELL_HEIGHT)
+            (apple_rect_x, apple_rect_y), Game.get_cell_size())
 
         screen.blit(self.__apple_img, apple_rect)

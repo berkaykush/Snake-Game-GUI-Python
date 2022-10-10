@@ -3,7 +3,7 @@ import pygame
 from buttons import Button
 from colors import COLORS
 from game import Game
-from points import CELL_HEIGHT, CELL_WIDTH, Point
+from points import Point
 
 
 class Menu(Game):
@@ -61,10 +61,10 @@ class Menu(Game):
         super()._draw_game_elements()
         
         text = self._title
-        font_size = min(int(CELL_WIDTH * 2), int(CELL_HEIGHT * 2))
+        font_size = min(int(self._cell_width * 2), int(self._cell_height * 2))
         text_pos = Point(10, 5)
         background_pos = Point(3, 3)
-        background_size = (CELL_WIDTH * 14, CELL_HEIGHT * 4)
+        background_size = (self._cell_width * 14, self._cell_height * 4)
         background_color = COLORS['BLUE']
         border_radius = 100
         self._draw_text(text, font_size, text_pos, background_pos, background_size, 

@@ -1,27 +1,28 @@
 import pygame
 
 from colors import COLORS
-from points import CELL_HEIGHT, CELL_WIDTH
+from game import Game
 
 
 class Button:
     def __init__(self, font_type, name, position, elevation):
-        font_size = min(int(CELL_WIDTH * 1.5), int(CELL_HEIGHT * 1.5))
+        font_size = min(int(Game.get_cell_width() * 1.5),
+                        int(Game.get_cell_height() * 1.5))
         text_font = pygame.font.Font(font_type, font_size)
 
-        width = CELL_WIDTH * 10
-        height = CELL_HEIGHT * 3
+        width = Game.get_cell_width() * 10
+        height = Game.get_cell_height() * 3
 
         self.__name = name
         self.__position = position
         self.__elevation = elevation
 
         self.__bottom_rect = pygame.Rect(
-            position.get_x * CELL_WIDTH, position.get_y * CELL_HEIGHT, width, self.__elevation)
+            position.get_x * Game.get_cell_width(), position.get_y * Game.get_cell_height(), width, self.__elevation)
         self.__bottom_rect_color = COLORS['DARK BLUE']
 
         self.__top_rect = pygame.Rect(
-            position.get_x * CELL_WIDTH, self.__position.get_y * CELL_HEIGHT, width, height)
+            position.get_x * Game.get_cell_width(), self.__position.get_y * Game.get_cell_height(), width, height)
         self.__top_rect_color = COLORS['BLUE']
 
         self.__text_surface = text_font.render(name, True, COLORS['WHITE'])
@@ -49,7 +50,7 @@ class Button:
 
     def draw(self, screen):
         self.__top_rect.y = (self.__position.get_y *
-                             CELL_HEIGHT) - self.__elevation
+                             Game.get_cell_height()) - self.__elevation
         self.__text_rect.center = self.__top_rect.center
 
         self.__bottom_rect.midtop = self.__top_rect.midtop

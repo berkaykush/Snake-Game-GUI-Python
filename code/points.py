@@ -1,7 +1,3 @@
-CELL_WIDTH, CELL_HEIGHT = 30, 30
-CELL_NUMBER = 20  # Please do not change the value.
-
-
 class Point:
     def __init__(self, x, y):
         self.__x = x

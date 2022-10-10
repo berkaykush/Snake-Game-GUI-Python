@@ -4,18 +4,32 @@ import sys
 import pygame
 
 from colors import COLORS
-from points import CELL_HEIGHT, CELL_NUMBER, CELL_WIDTH
+
+CELL_NUMBER = 20
 
 
 class Game:
+    _cell_width, _cell_height = 30, 30
     _screen = pygame.display.set_mode(
-        (CELL_WIDTH * CELL_NUMBER, CELL_HEIGHT * (CELL_NUMBER + 1)))
+        (_cell_width * CELL_NUMBER, _cell_height * (CELL_NUMBER + 1)))
 
     _fps = 60
     _clock = pygame.time.Clock()
 
     _font_type = os.path.join('..', 'resources', 'font', 'Bubblegum.ttf')
     _score = 0
+
+    @classmethod
+    def get_cell_width(cls):
+        return Game._cell_width
+
+    @classmethod
+    def get_cell_height(cls):
+        return Game._cell_height
+
+    @classmethod
+    def get_cell_size(cls):
+        return (Game._cell_width, Game._cell_height)
 
     def _increase_score_by(self, increment):
         Game._score += increment
@@ -44,11 +58,11 @@ class Game:
         for y in range(CELL_NUMBER + 1):
             for x in range(CELL_NUMBER):
                 if x % 2 == 0 and y % 2 == 0 or x % 2 != 0 and y % 2 != 0:
-                    grass_rect_x = CELL_WIDTH * x
-                    grass_rect_y = CELL_HEIGHT * y
+                    grass_rect_x = Game._cell_width * x
+                    grass_rect_y = Game._cell_height * y
 
                     grass_rect = pygame.Rect(
-                        grass_rect_x, grass_rect_y, CELL_WIDTH, CELL_HEIGHT)
+                        grass_rect_x, grass_rect_y, Game._cell_width, Game._cell_height)
                     pygame.draw.rect(
                         Game._screen, COLORS['DARK GREEN'], grass_rect)
 
@@ -58,9 +72,9 @@ class Game:
         text_surface = text_font.render(text, True, COLORS['WHITE'])
 
         text_rect = text_surface.get_rect(
-            center=(CELL_WIDTH * text_pos.get_x, CELL_HEIGHT * text_pos.get_y))
+            center=(Game._cell_width * text_pos.get_x, Game._cell_height * text_pos.get_y))
         background = pygame.Rect(
-            (background_pos.get_x * CELL_WIDTH, background_pos.get_y * CELL_HEIGHT), background_size)
+            (background_pos.get_x * Game._cell_width, background_pos.get_y * Game._cell_height), background_size)
 
         pygame.draw.rect(
             Game._screen, background_color, background, border_radius=border_radius)
