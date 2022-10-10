@@ -2,6 +2,7 @@
 ![](https://img.shields.io/badge/Programming_Language-Python-blue.svg)
 ![](https://img.shields.io/badge/Game-Snake-yellow.svg)
 ![](https://img.shields.io/badge/Python_Version-3.10.4-brown.svg)
+![](https://img.shields.io/badge/Pygame_Version-2.1.2-purple.svg)
 ![](https://img.shields.io/badge/Status-Ongoing-green.svg)
 
 <p>
