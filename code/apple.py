@@ -3,7 +3,7 @@ import random
 
 import pygame
 
-from game import Game
+from game import RESOURCES_PATH, Game
 
 
 class Apple:
@@ -11,7 +11,7 @@ class Apple:
         self.__block_position = random.choice(free_cells)
 
         self.__apple_img = pygame.image.load(os.path.join(
-            '..', 'resources', 'images', 'apple.png')).convert_alpha()
+            RESOURCES_PATH, 'images', 'apple.png')).convert_alpha()
         self.__apple_img = pygame.transform.scale(
             self.__apple_img, Game.get_cell_size())
 

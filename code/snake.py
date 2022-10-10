@@ -2,7 +2,7 @@ import os
 
 import pygame
 
-from game import CELL_NUMBER, Game
+from game import CELL_NUMBER, RESOURCES_PATH, Game
 from points import Point
 
 SNAKE_DIRECTIONS = {
@@ -28,7 +28,7 @@ class Snake:
         self.__curr_body_block_img = self.__body_horizontal_img
 
         self.__crunch_sound = pygame.mixer.Sound(
-            os.path.join('..', 'resources', 'sound', 'crunch.wav'))
+            os.path.join(RESOURCES_PATH, 'sound', 'crunch.wav'))
 
         # Snake does not move until a player presses an arrow key.
         self.__curr_direction = Point(0, 0)
@@ -36,74 +36,74 @@ class Snake:
 
     def __init_head_img(self):
         self.__head_up_img = pygame.image.load(os.path.join(
-            '..', 'resources', 'images', 'head_up.png')).convert_alpha()
+            RESOURCES_PATH, 'images', 'head_up.png')).convert_alpha()
         self.__head_up_img = pygame.transform.smoothscale(
             self.__head_up_img, Game.get_cell_size())
 
         self.__head_left_img = pygame.image.load(os.path.join(
-            '..', 'resources', 'images', 'head_left.png')).convert_alpha()
+            RESOURCES_PATH, 'images', 'head_left.png')).convert_alpha()
         self.__head_left_img = pygame.transform.smoothscale(
             self.__head_left_img, Game.get_cell_size())
 
         self.__head_right_img = pygame.image.load(os.path.join(
-            '..', 'resources', 'images', 'head_right.png')).convert_alpha()
+            RESOURCES_PATH, 'images', 'head_right.png')).convert_alpha()
         self.__head_right_img = pygame.transform.smoothscale(
             self.__head_right_img, Game.get_cell_size())
 
         self.__head_down_img = pygame.image.load(os.path.join(
-            '..', 'resources', 'images', 'head_down.png')).convert_alpha()
+            RESOURCES_PATH, 'images', 'head_down.png')).convert_alpha()
         self.__head_down_img = pygame.transform.smoothscale(
             self.__head_down_img, Game.get_cell_size())
 
     def __init_tail_img(self):
         self.__tail_up_img = pygame.image.load(os.path.join(
-            '..', 'resources', 'images', 'tail_up.png')).convert_alpha()
+            RESOURCES_PATH, 'images', 'tail_up.png')).convert_alpha()
         self.__tail_up_img = pygame.transform.smoothscale(
             self.__tail_up_img, Game.get_cell_size())
 
         self.__tail_left_img = pygame.image.load(os.path.join(
-            '..', 'resources', 'images', 'tail_left.png')).convert_alpha()
+            RESOURCES_PATH, 'images', 'tail_left.png')).convert_alpha()
         self.__tail_left_img = pygame.transform.smoothscale(
             self.__tail_left_img, Game.get_cell_size())
 
         self.__tail_right_img = pygame.image.load(os.path.join(
-            '..', 'resources', 'images', 'tail_right.png')).convert_alpha()
+            RESOURCES_PATH, 'images', 'tail_right.png')).convert_alpha()
         self.__tail_right_img = pygame.transform.smoothscale(
             self.__tail_right_img, Game.get_cell_size())
 
         self.__tail_down_img = pygame.image.load(os.path.join(
-            '..', 'resources', 'images', 'tail_down.png')).convert_alpha()
+            RESOURCES_PATH, 'images', 'tail_down.png')).convert_alpha()
         self.__tail_down_img = pygame.transform.smoothscale(
             self.__tail_down_img, Game.get_cell_size())
 
     def __init_body_block_img(self):
         self.__body_horizontal_img = pygame.image.load(os.path.join(
-            '..', 'resources', 'images', 'body_horizontal.png')).convert_alpha()
+            RESOURCES_PATH, 'images', 'body_horizontal.png')).convert_alpha()
         self.__body_horizontal_img = pygame.transform.smoothscale(
             self.__body_horizontal_img, Game.get_cell_size())
 
         self.__body_vertical_img = pygame.image.load(os.path.join(
-            '..', 'resources', 'images', 'body_vertical.png')).convert_alpha()
+            RESOURCES_PATH, 'images', 'body_vertical.png')).convert_alpha()
         self.__body_vertical_img = pygame.transform.smoothscale(
             self.__body_vertical_img, Game.get_cell_size())
 
         self.__body_bl_img = pygame.image.load(os.path.join(
-            '..', 'resources', 'images', 'body_bl.png')).convert_alpha()
+            RESOURCES_PATH, 'images', 'body_bl.png')).convert_alpha()
         self.__body_bl_img = pygame.transform.smoothscale(
             self.__body_bl_img, Game.get_cell_size())
 
         self.__body_br_img = pygame.image.load(os.path.join(
-            '..', 'resources', 'images', 'body_br.png')).convert_alpha()
+            RESOURCES_PATH, 'images', 'body_br.png')).convert_alpha()
         self.__body_br_img = pygame.transform.smoothscale(
             self.__body_br_img, Game.get_cell_size())
 
         self.__body_tl_img = pygame.image.load(os.path.join(
-            '..', 'resources', 'images', 'body_tl.png')).convert_alpha()
+            RESOURCES_PATH, 'images', 'body_tl.png')).convert_alpha()
         self.__body_tl_img = pygame.transform.smoothscale(
             self.__body_tl_img, Game.get_cell_size())
 
         self.__body_tr_img = pygame.image.load(os.path.join(
-            '..', 'resources', 'images', 'body_tr.png')).convert_alpha()
+            RESOURCES_PATH, 'images', 'body_tr.png')).convert_alpha()
         self.__body_tr_img = pygame.transform.smoothscale(
             self.__body_tr_img, Game.get_cell_size())
 

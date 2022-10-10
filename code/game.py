@@ -6,6 +6,24 @@ import pygame
 from colors import COLORS
 
 CELL_NUMBER = 20
+RESOURCES_PATH = 'resources' if os.path.basename(
+    os.getcwd()) == 'Snake-Game-GUI-Python' else os.pardir + os.path.sep + 'resources'
+
+
+def init_game():
+    is_error = pygame.init()
+
+    if is_error[1]:
+        print(f'Error {is_error[1]}')
+        sys.exit()
+
+    print('Pygame initialized successfully.')
+
+
+def init_logo():
+    logo = pygame.image.load(os.path.join(
+        RESOURCES_PATH, 'images', 'game_logo.png'))
+    pygame.display.set_icon(logo)
 
 
 class Game:
@@ -16,7 +34,7 @@ class Game:
     _fps = 60
     _clock = pygame.time.Clock()
 
-    _font_type = os.path.join('..', 'resources', 'font', 'Bubblegum.ttf')
+    _font_type = os.path.join(RESOURCES_PATH, 'font', 'Bubblegum.ttf')
     _score = 0
 
     @classmethod
