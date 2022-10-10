@@ -24,3 +24,9 @@ git clone https://github.com/bk0511/Snake-Game-GUI-Python.git
 cd Sanke-Game-GUI-Python
 python code/main.py
 ```
+or 
+```
+git clone https://github.com/bk0511/Snake-Game-GUI-Python.git
+cd Sanke-Game-GUI-Python/code
+python main.py
+```
