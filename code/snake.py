@@ -200,6 +200,8 @@ class Snake:
         head_relation = self.__body_block_positions[-1] - \
             self.__head_block_position
 
+        head_relation = self.__check_for_end_point_relations(head_relation)
+
         self.__curr_head_img = {
             Point(0, 1): self.__head_up_img,
             Point(1, 0): self.__head_left_img,
