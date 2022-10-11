@@ -8,7 +8,7 @@
 <p>
   Snake game in Python using the pygame module.<br>
   Later on, a settings menu will be included.<br>
-  credits for the images and the sound: <a href="github.com/clear-code-projects/Snake">here</a>
+  Credits for the images and the sound: <a href="github.com/clear-code-projects/Snake">here</a>
 </p>
 
 ## Packages To Install:
@@ -30,3 +30,18 @@ git clone https://github.com/bk0511/Snake-Game-GUI-Python.git
 cd Sanke-Game-GUI-Python/code
 python main.py
 ```
+<p align="center">
+<video src="https://user-images.githubusercontent.com/70837975/195179174-ce94662e-90f8-4fc6-9fb4-4b2970aa44a0.mov" controls="controls" style="max-width: 730px;">
+</video>
+</p>
+
+## Screenshots
+<p>
+<img src="./resources/screenshots/screenshot-1.png" height="400" width="365">
+<img src="./resources/screenshots/screenshot-2.png" height="400" width="365">
+  <img src="./resources/screenshots/screenshot-3.png" height="400" width="365">
+  <img src="./resources/screenshots/screenshot-4.png" height="400" width="365">
+</p>
+
+## Author
+Berkay Kush
