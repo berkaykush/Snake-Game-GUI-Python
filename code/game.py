@@ -66,7 +66,8 @@ class Game:
         pygame.display.update()
 
         Game._clock.tick(Game._fps)
-
+    
+    # Protected method
     def _quit_game(self):
         pygame.display.quit()
         pygame.quit()
@@ -89,7 +90,8 @@ class Game:
                         grass_rect_x, grass_rect_y, Game._cell_width, Game._cell_height
                     )
                     pygame.draw.rect(Game._screen, COLORS["DARK GREEN"], grass_rect)
-
+    
+    # Protected method
     def _draw_text(
         self,
         text,
