@@ -1,13 +1,13 @@
 # Snake-Game-GUI-Python
 ![](https://img.shields.io/badge/Programming_Language-Python-blue.svg)
 ![](https://img.shields.io/badge/Game-Snake-yellow.svg)
-![](https://img.shields.io/badge/Python_Version-3.10.4-brown.svg)
-![](https://img.shields.io/badge/Pygame_Version-2.1.2-purple.svg)
-![](https://img.shields.io/badge/Status-Ongoing-green.svg)
+![](https://img.shields.io/badge/Python_Version-3.11.0-brown.svg)
+![](https://img.shields.io/badge/Pygame_Version-2.1.4.dev1-purple.svg)
+![](https://img.shields.io/badge/Status-Complete-green.svg)
 
 <p>
   Snake game in Python using the pygame module.<br>
-  Later on, a settings menu will be included.<br>
+  Later on, a settings menu might be added, where a player could change the screensize or the difficulty of the game.<br>
   Credits for the images and the sound: <a href="https://github.com/clear-code-projects/Snake" target="_blank">here</a>
 </p>
 
@@ -20,18 +20,18 @@ pip install pygame
 ## Running the Snake:
 
 ```
-git clone https://github.com/bk0511/Snake-Game-GUI-Python.git
+git clone https://github.com/berkaykush/Snake-Game-GUI-Python.git
 cd Sanke-Game-GUI-Python
 python code/main.py
 ```
 or 
 ```
-git clone https://github.com/bk0511/Snake-Game-GUI-Python.git
+git clone https://github.com/berkaykush/Snake-Game-GUI-Python.git
 cd Sanke-Game-GUI-Python/code
 python main.py
 ```
 <p align="center">
-<video src="https://user-images.githubusercontent.com/70837975/195179174-ce94662e-90f8-4fc6-9fb4-4b2970aa44a0.mov" controls="controls" style="max-width: 730px;">
+<video src="https://user-images.githubusercontent.com/70837975/209442647-7504e87c-d74b-4c5b-9b57-ab49b22c2db3.mp4" controls="controls" style="max-width: 730px;">
 </video>
 </p>
 
