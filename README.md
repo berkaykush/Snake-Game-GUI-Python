@@ -30,10 +30,7 @@ git clone https://github.com/berkaykush/Snake-Game-GUI-Python.git
 cd Sanke-Game-GUI-Python/code
 python main.py
 ```
-<p align="center">
-<video src="https://user-images.githubusercontent.com/70837975/209442647-7504e87c-d74b-4c5b-9b57-ab49b22c2db3.mp4" controls="controls" style="max-width: 730px;">
-</video>
-</p>
+https://user-images.githubusercontent.com/70837975/209442647-7504e87c-d74b-4c5b-9b57-ab49b22c2db3.mp4
 
 ## Screenshots
 <p>
