@@ -1,5 +1,6 @@
-from menu import Menu
 from points import Point
+
+from menu_items.menu import Menu
 
 
 class StartMenu(Menu):

@@ -1,10 +1,11 @@
 import pygame
 
-from apple import Apple
 from colors import COLORS
 from game import CELL_NUMBER, Game
 from points import Point
-from snake import Snake
+
+from gameplay_items.apple import Apple
+from gameplay_items.snake import Snake
 
 
 class Gameplay(Game):

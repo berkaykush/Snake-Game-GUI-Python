@@ -1,9 +1,11 @@
 import time
 
-from end_menu import EndMenu
 from game import init_game, init_logo
-from gameplay import Gameplay
-from start_menu import StartMenu
+
+from gameplay_items.gameplay import Gameplay
+
+from menu_items.start_menu import StartMenu
+from menu_items.end_menu import EndMenu
 
 if __name__ == "__main__":
     init_game()
@@ -16,6 +18,7 @@ if __name__ == "__main__":
     gameplay.run()
 
     end_menu = EndMenu()
+
     while True:
         time.sleep(0.4)
         end_menu.run()

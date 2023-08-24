@@ -1,9 +1,10 @@
 import pygame
 
-from buttons import Button
 from colors import COLORS
 from game import Game
 from points import Point
+
+from menu_items.buttons import Button
 
 
 class Menu(Game):
