@@ -30,7 +30,7 @@ def init_logo():
 
 class Game:
     # Protected variables
-    _cell_width, _cell_height = 30, 30
+    _cell_width, _cell_height = 40, 40
     _screen = pygame.display.set_mode(
         (_cell_width * CELL_NUMBER, _cell_height * (CELL_NUMBER + 1))
     )
@@ -66,7 +66,7 @@ class Game:
         pygame.display.update()
 
         Game._clock.tick(Game._fps)
-    
+
     # Protected method
     def _quit_game(self):
         pygame.display.quit()
@@ -90,7 +90,7 @@ class Game:
                         grass_rect_x, grass_rect_y, Game._cell_width, Game._cell_height
                     )
                     pygame.draw.rect(Game._screen, COLORS["DARK GREEN"], grass_rect)
-    
+
     # Protected method
     def _draw_text(
         self,
